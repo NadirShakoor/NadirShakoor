@@ -1,0 +1,182 @@
+<svg viewBox="0 0 800 480" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Ultra Glow Effects -->
+    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="20" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Background Grid Pattern -->
+    <pattern id="cyber-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.4" />
+      <circle cx="30" cy="30" r="1" fill="#00f2fe" opacity="0.3" />
+    </pattern>
+
+    <!-- Professional Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="50%" stop-color="#090d19" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+
+    <linearGradient id="cyan-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#7f00ff" />
+    </linearGradient>
+
+    <linearGradient id="pink-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="100%" stop-color="#ffb800" />
+    </linearGradient>
+
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0b0f19" stop-opacity="0.95" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spin-reverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulse-opacity {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+    @keyframes dash-flow {
+      to { stroke-dashoffset: -40; }
+    }
+    @keyframes code-typing {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    .rotating-ring { animation: spin-slow 25s linear infinite; transform-origin: 400px 240px; }
+    .rotating-ring-rev { animation: spin-reverse 15s linear infinite; transform-origin: 400px 240px; }
+    .floating-card { animation: float 6s ease-in-out infinite; }
+    .pulsing-glow { animation: pulse-opacity 3s ease-in-out infinite; }
+    .circuit-animated { stroke-dasharray: 6, 10; animation: dash-flow 2s linear infinite; }
+    .cursor-blink { animation: code-typing 1s infinite; }
+  </style>
+
+  <!-- Deep Tech Background -->
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="16" />
+  <rect width="100%" height="100%" fill="url(#cyber-grid)" rx="16" />
+
+  <!-- Ambient Glow Blobs -->
+  <circle cx="150" cy="100" r="140" fill="#00f2fe" opacity="0.08" filter="blur(50px)" />
+  <circle cx="650" cy="380" r="160" fill="#7f00ff" opacity="0.08" filter="blur(60px)" />
+  <circle cx="400" cy="240" r="180" fill="#ff007f" opacity="0.05" filter="blur(70px)" />
+
+  <!-- Outer Cyber Border Frame -->
+  <rect x="16" y="16" width="768" height="448" fill="none" stroke="#1e293b" stroke-width="1.5" rx="10" />
+  <rect x="22" y="22" width="756" height="436" fill="none" stroke="url(#cyan-purple)" stroke-width="1" opacity="0.3" rx="8" />
+
+  <!-- Corner Tech Accents -->
+  <path d="M 16 50 L 16 24 L 42 24" fill="none" stroke="#00f2fe" stroke-width="3" stroke-linecap="round" />
+  <path d="M 784 50 L 784 24 L 758 24" fill="none" stroke="#00f2fe" stroke-width="3" stroke-linecap="round" />
+  <path d="M 16 430 L 16 456 L 42 456" fill="none" stroke="#00f2fe" stroke-width="3" stroke-linecap="round" />
+  <path d="M 784 430 L 784 456 L 758 456" fill="none" stroke="#00f2fe" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Top System Bar -->
+  <rect x="40" y="32" width="320" height="26" fill="#0b0f19" stroke="#1e293b" stroke-width="1" rx="6" />
+  <circle cx="55" cy="45" r="4" fill="#ff007f" />
+  <circle cx="55" cy="45" r="7" fill="#ff007f" class="pulsing-glow" />
+  <text x="70" y="49" fill="#94a3b8" font-family="'Fira Code', monospace" font-size="10" font-weight="bold" letter-spacing="1">SYSTEM::NADIR_SHAKOOR.CORE</text>
+
+  <!-- ================= CENTRAL HOLOGRAPHIC CORE ================= -->
+  <g class="floating-card">
+    <!-- Outer Hologram Ring -->
+    <circle cx="400" cy="245" r="105" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="8, 4" class="rotating-ring" />
+    <circle cx="400" cy="245" r="90" fill="none" stroke="url(#cyan-purple)" stroke-width="2" stroke-dasharray="15, 25" class="rotating-ring-rev" filter="url(#neon-glow)" />
+    
+    <!-- Central Hub Card -->
+    <circle cx="400" cy="245" r="72" fill="url(#card-bg)" stroke="#00f2fe" stroke-width="2" filter="url(#soft-shadow)" />
+    
+    <!-- Avatar / Code Icon inside Core -->
+    <text x="400" y="232" font-size="34" text-anchor="middle">⚡</text>
+    <text x="400" y="258" fill="#ffffff" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">NADIR</text>
+    <text x="400" y="272" fill="#00f2fe" font-family="'Fira Code', monospace" font-size="9" text-anchor="middle">FRONTEND.DEV</text>
+  </g>
+
+  <!-- ================= LEFT TECH CARDS ================= -->
+  <!-- Card 1: Core Stack -->
+  <g class="floating-card" style="animation-delay: 0.5s;" filter="url(#soft-shadow)">
+    <rect x="50" y="90" width="190" height="110" fill="url(#card-bg)" stroke="#1e293b" stroke-width="1.5" rx="8" />
+    <rect x="50" y="90" width="190" height="3" fill="url(#cyan-purple)" rx="1.5" />
+    <text x="65" y="115" fill="#00f2fe" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">CORE_STACK</text>
+    <text x="65" y="135" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">React • Vue • Vite</text>
+    <text x="65" y="155" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="10">TypeScript &amp; Tailwind</text>
+    <circle cx="215" cy="148" r="4" fill="#39ff14" filter="url(#neon-glow)" />
+  </g>
+
+  <!-- Card 2: State Architecture -->
+  <g class="floating-card" style="animation-delay: 1s;" filter="url(#soft-shadow)">
+    <rect x="50" y="305" width="190" height="110" fill="url(#card-bg)" stroke="#1e293b" stroke-width="1.5" rx="8" />
+    <rect x="50" y="305" width="190" height="3" fill="url(#pink-orange)" rx="1.5" />
+    <text x="65" y="330" fill="#ff007f" font-family="'Fira Code', monospace" font-size="11" font-weight="bold">STATE_ENGINE</text>
+    <text x="65" y="350" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">Zustand &amp; Pinia</text>
+    <text x="65" y="370" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="10">Optimized State Management</text>
+    <circle cx="215" cy="363" r="4" fill="#39ff14" filter="url(#neon-glow)" />
+  </g>
+
+  <!-- ================= RIGHT TERMINAL CARD ================= -->
+  <g class="floating-card" style="animation-delay: 1.5s;" filter="url(#soft-shadow)">
+    <rect x="560" y="125" width="190" height="230" fill="url(#card-bg)" stroke="#1e293b" stroke-width="1.5" rx="8" />
+    <!-- Terminal Header -->
+    <rect x="560" y="125" width="190" height="24" fill="#090d16" stroke="#1e293b" stroke-width="1" rx="6" />
+    <circle cx="575" cy="137" r="3.5" fill="#ef4444" />
+    <circle cx="587" cy="137" r="3.5" fill="#f59e0b" />
+    <circle cx="599" cy="137" r="3.5" fill="#10b981" />
+    <text x="615" y="141" fill="#64748b" font-family="'Fira Code', monospace" font-size="9">terminal.sh</text>
+
+    <!-- Terminal Code Content -->
+    <g transform="translate(575, 175)" font-family="'Fira Code', monospace" font-size="9" fill="#39ff14">
+      <text x="0" y="0" fill="#7f00ff">> dev_init()</text>
+      <text x="0" y="20" fill="#00f2fe">status: online</text>
+      <text x="0" y="40" fill="#e2e8f0">stack: [React, Vue]</text>
+      <text x="0" y="60" fill="#ffb800">ui: interactive</text>
+      <text x="0" y="80" fill="#39ff14">performance: 100%</text>
+      <text x="0" y="105" fill="#94a3b8">> building apps...</text>
+      <text x="0" y="125" fill="#00f2fe">ready <tspan class="cursor-blink" fill="#00f2fe">_</tspan></text>
+    </g>
+  </g>
+
+  <!-- ================= CIRCUIT CONNECTIONS ================= -->
+  <g opacity="0.6">
+    <!-- Left to Center -->
+    <path d="M 240 145 L 305 145 L 350 200" fill="none" stroke="#1e293b" stroke-width="2" />
+    <path d="M 240 145 L 305 145 L 350 200" fill="none" stroke="#00f2fe" stroke-width="2" class="circuit-animated" />
+
+    <path d="M 240 360 L 305 360 L 350 290" fill="none" stroke="#1e293b" stroke-width="2" />
+    <path d="M 240 360 L 305 360 L 350 290" fill="none" stroke="#7f00ff" stroke-width="2" class="circuit-animated" />
+
+    <!-- Center to Right -->
+    <path d="M 450 245 L 560 245" fill="none" stroke="#1e293b" stroke-width="2" />
+    <path d="M 450 245 L 560 245" fill="none" stroke="#39ff14" stroke-width="2" class="circuit-animated" />
+  </g>
+
+  <!-- Node Dots -->
+  <circle cx="350" cy="200" r="3" fill="#00f2fe" filter="url(#neon-glow)" />
+  <circle cx="350" cy="290" r="3" fill="#7f00ff" filter="url(#neon-glow)" />
+  <circle cx="560" cy="245" r="3" fill="#39ff14" filter="url(#neon-glow)" />
+
+</svg>
