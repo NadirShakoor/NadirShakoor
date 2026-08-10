@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hi there, I'm Nadir Shakoor! 👋
+# Hi there, I'm Nadir Shakoor Khatti! 👋
 ### 🚀 Frontend Software Developer & UI/UX Architect
 
 <a href="https://git.io/typing-svg">
